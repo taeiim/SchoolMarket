@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>게시글 작성</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="write.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<div id="sell">
@@ -50,9 +51,9 @@
 				<td><input type="text" name="price" placeholder="가격은 숫자로만 입력" class="input" required></td>
 			</tr>
 			<tr>
-				<th>내용</th>
-					<td><textarea rows="10" placeholder="내용을 입력하세요." name="content" required></textarea></td>
-				</tr>
+				<th>제목</th>
+				<td><input type="text" name="mTitle" id="mTitle" value="<?php echo isset($row['m_title'])?$row['m_title']:null?>"></td>
+			</tr>
 				<div id="subimg">
 					<p>이미지 등록</p>
 					<input type="file" accept=".jpg,.png/" id="subfile" multiple="multiple"><br>
@@ -60,7 +61,6 @@
 			
 		</tbody>
 	</table>
-	<input type="submit" value="물품 등록" id="reg">
 	</form>
 	
 	<script>
@@ -79,4 +79,4 @@
 		});
 	</script>
 </body>
-</html>
+</html>ㅎ
