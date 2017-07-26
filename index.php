@@ -29,7 +29,7 @@
 
     $sql = 'select count(*) as cnt from market' . $searchSql;
     $result = $db->query($sql);
-    $row = $result->fetch_assoc();
+    $row = $result->fetch_assoc($result);
 
     $allPost = $row['cnt']; //전체 게시글의 수
 
@@ -115,6 +115,57 @@
 </head>
 
 <body>
+<div class="container">
+    <hr>
+    <h3>자유게시판</h3>
+    <hr>
+    <table class="table table-hover">
+        <caption>자유게시판</caption>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        if(isset($emptyData)) {
+            echo $emptyData;
+        } else {
+            while($row = $result->fetch_assoc())
+            {
+                $datetime = explode(' ', $row['b_date']);
+                $date = $datetime[0];
+                $time = $datetime[1];
+                if($date == Date('Y-m-d'))
+                    $row['b_date'] = $time;
+                else
+                    $row['b_date'] = $date;
+                ?>
+                <tr>
+                    <td><?php echo $row['b_no']?></td>
+                    <td>
+                        <a href="./view.php?bno=<?php echo $row['b_no']?>"><?php echo $row['b_title']?></a>
+                    </td>
+                    <td><?php echo $row['b_id']?></td>
+                    <td><?php echo $row['b_date']?></td>
+                    <td><?php echo $row['b_hit']?></td>
+                </tr>
+                <?php
+            }
+        }
+        ?>
+        </tbody>
+    </table>
+    <a href="./write.php" class="btn btn-default pull-right">글쓰기</a>
+    <div class="text-center">
+        <ul>
+            <?php echo $paging ?>
+        </ul>
+    </div>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <div id="wrapper">
     <div id="grid">
@@ -131,7 +182,7 @@
               <div class="stats-container">
                 <span class="product_price"><?php echo $row['m_price'] ?>원</span>
                 <span class="product_name"><?php echo $row['m_title'] ?></span>
-                <p>의류</p>
+                <p></p>
                 <div class="product-options">
                   <strong>Description</strong>
                   <span>봄가을 가장 인기있는 윗옷</span>
