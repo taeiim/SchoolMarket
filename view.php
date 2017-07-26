@@ -42,7 +42,7 @@ $row = $result->fetch_assoc();
         <div class="btnSet">
             <a href="./write.php?bno=<?php echo $mNo?>">수정</a>
             <a href="./delete.php?bno=<?php echo $mNo?>">삭제</a>
-            <a href="./">목록</a>
+            <a href="./index.php">목록</a>
         </div>
         <div id="boardComment">
             <?php require_once('./comment.php')?>

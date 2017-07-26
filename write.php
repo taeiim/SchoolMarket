@@ -25,13 +25,12 @@
 		<p id="sta"> Home/ <strong>물품 판매</strong></p>
 	</div>
 	<hr width="1000rem;">
-	<form id="img" runat="server">
-		<p>대표 이미지 등록</p>
-		<button id="replace">대표 이미지 업로드</button>
-		<input type="file" accept=".jpg,.png/" id="imgInp"><br>
-		<img id="blah" src="none-img.png">
-	</form>
-	<form action="./write_update.php" method="post">
+	<form action="gallery.html" method="post" enctype="multipart/form-data" id="img">
+        <INPUT TYPE=hidden name=mode value=insert>
+        <label>대표 이미지 등록</label><input type='file' name='image'>
+        <input type='submit' value='이미지 전송 '>
+    </form>
+    <form action="./write_update.php" method="post">
         <?php
         if(isset($mNo)) {
             echo '<input type="hidden" name="mno" value="' . $mNo . '">';
@@ -72,11 +71,6 @@
 				<th><label for="mContent">내용</label></th>
 					<td><textarea rows="10" placeholder="내용을 입력하세요." name="mContent" id="mContent" required><?php echo isset($row['m_content'])?$row['m_content']:null?></textarea></td>
 				</tr>
-            <div id="subimg">
-					<p>이미지 등록</p>
-					<input type="file" accept=".jpg,.png/" id="subfile" multiple="multiple"><br>
-				</div>
-			
 		</tbody>
 	</table>
         <div>
@@ -86,21 +80,5 @@
             <a href="./index.php">목록</a>
         </div>
 	</form>
-	
-	<script>
-		function readURL(input) {
-			if(input.files && input.files[0]) {
-				var reader = new FileReader();
-
-				reader.onload=function(e) {
-					$('#blah').attr('src', e.target.result);
-				} 
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-		$("#imgInp").change(function(){
-			readURL(this);
-		});
-	</script>
 </body>
 </html>

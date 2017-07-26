@@ -6,6 +6,7 @@
     } else {
         $page = 1;
     }
+
     if(isset($_GET['searchColumn'])) {
         $searchColumn = $_GET['searchColumn'];
         $subString .= '&amp;searchColumn=' . $searchColumn;
@@ -120,6 +121,20 @@
       <form action="test.html" method="post">
         <input class="util" type="submit" value="검색">
       </form>
+        <?php
+        if(isset($emptyData)) {
+            echo $emptyData;
+        } else {
+        while($row = $result->fetch_assoc())
+        {
+        $datetime = explode(' ', $row['m_date']);
+        $date = $datetime[0];
+        $time = $datetime[1];
+        if($date == Date('Y-m-d'))
+            $row['m_date'] = $time;
+        else
+            $row['m_date'] = $date;
+        ?>
       <div class="product">
         <div class="make3D">
           <div class="product-front">
@@ -131,8 +146,8 @@
             </form>
             <div class="stats">
               <div class="stats-container">
-                <span class="product_price">6000원</span>
-                <span class="product_name">아디다스 져지</span>
+                <span class="product_price"><?php echo $row['m_price'] ?>원</span>
+                <span class="product_name"><?php echo $row['m_title'] ?></span>
                 <p>의류</p>
                 <div class="product-options">
                   <strong>Description</strong>
@@ -144,7 +159,7 @@
         </div>
       </div>
 
-
+        <!--
       <div class="product">
         <div class="make3D">
           <div class="product-front">
@@ -168,7 +183,7 @@
           </div>
         </div>
       </div>
-
+        <!--
       <div class="product">
         <div class="make3D">
           <div class="product-front">
@@ -318,6 +333,7 @@
       </div>
     </div>
   </div>
+  -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="./script.js"></script>
 </body>
