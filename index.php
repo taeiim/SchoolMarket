@@ -1,11 +1,15 @@
 <?php
     require_once("./dbconfig.php");
 
+    /* 페이징 시작 */
+    //페이지 get 변수가 있다면 받아오고, 없다면 1페이지를 보여준다.
     if(isset($_GET['page'])) {
         $page = $_GET['page'];
     } else {
         $page = 1;
     }
+
+    /* 검색 시작 */
 
     if(isset($_GET['searchColumn'])) {
         $searchColumn = $_GET['searchColumn'];
@@ -21,7 +25,6 @@
     } else {
         $searchSql = '';
     }
-
     /* 검색 끝 */
 
     $sql = 'select count(*) as cnt from market' . $searchSql;
@@ -115,35 +118,15 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <div id="wrapper">
     <div id="grid">
-      <form action="test.html" method="post">
-          <a href="./write.php" class="util">물품등록</a>
-      </form>
-      <form action="test.html" method="post">
+        <a href="./write.php" class="util">물품등록</a>
         <input class="util" type="submit" value="검색">
-      </form>
-        <?php
-        if(isset($emptyData)) {
-            echo $emptyData;
-        } else {
-        while($row = $result->fetch_assoc())
-        {
-        $datetime = explode(' ', $row['m_date']);
-        $date = $datetime[0];
-        $time = $datetime[1];
-        if($date == Date('Y-m-d'))
-            $row['m_date'] = $time;
-        else
-            $row['m_date'] = $date;
-        ?>
       <div class="product">
         <div class="make3D">
           <div class="product-front">
             <div class="shadow"></div>
             <img src="http://localhost/img/bitnami.png" alt="" />
             <div class="image_overlay"></div>
-            <form action="test.html" method="post">
-              <input class="view_gallery" type="submit" name="" value="자세히 보기">
-            </form>
+              <a href="./view.php" class="view_gallery">자세히 보기</a>
             <div class="stats">
               <div class="stats-container">
                 <span class="product_price"><?php echo $row['m_price'] ?>원</span>
