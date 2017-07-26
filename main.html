@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SCHOOL MARKET</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/buysellflip.css">
+    <link rel="stylesheet" href="./css/lostflip.css">
+    <link rel="stylesheet" href="./css/shareflip.css">
+	
+	<style type="text/css">
+				/**
+		 * Tested in:
+		 * Win7:
+		 *   Chrome 34
+		 *   Firefox 26 - 28
+		 *   IE 10
+		 *   Opera 12.16 (marker animation not working)
+		 *   Safari 5.1.7 (marker animation, background
+		 *      gradient not working)
+		 * Android:
+		 *   Chrome 34 (animation not working)
+		**/
+
+		@font-face {
+    		font-family: 'NanumGothic';
+    		src: url(NanumFont_TTF_ALL/NanumGothic.ttf) format('truetype');
+		}
+
+
+
+
+		body {
+			    
+			background-image: url('./smi/main2.jpg');
+			background-repeat: no-repeat; 
+			background-attachment: fixed; 
+			font-family: NanumGothic;
+		} 
+
+
+
+			
+		header {
+		  width: 980px;
+		  height: 150px;
+		  font-size: 3em;
+		  line-height: 150px;
+		  color: #222;
+		  margin: 0 auto;
+		}
+
+		#wrapper {
+		  width: 100%;
+		  min-height: 20%;
+		  margin: 0 auto;
+		}
+
+		nav {
+		  position: relative;
+		  width: 100%;
+		  height: 50%;
+		  margin: 0 auto;
+		  background: #2e7d32;
+		  text-align: center;
+		  border-top:2px solid black; 
+		  border-bottom:2px solid black; 
+		  border-left:2px solid black; 
+		  border-right:2px
+		}
+
+		header, nav { 
+		  display: block;
+		}
+
+		nav ul#menu {
+		  display: block;
+		  margin: 0;
+		  padding: 0;
+		  list-style: 0;
+		  font-size: 20px;
+		} 
+
+		nav ul#menu li {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		nav ul#menu li a {
+		  display: block;
+		  height: 50px;
+		  font-size: 1em;
+		  line-height: 50px;
+		  color: #fff;
+		  text-decoration: none;
+		  padding: 0 15px;
+		}
+
+		nav ul#menu li a:hover, nav ul#menu li:hover > a {
+		  background: #333;
+		}
+
+		nav ul#menu li:hover > #mega {
+		  display: block;
+		}
+
+		#mega {
+		  position: absolute;
+		  top: 100%;
+		  left: 0;
+		  width: 920px;
+		  height: auto;
+		  padding: 20px 30px;
+		  background: #333;
+		  display: none;
+		}
+
+		ul#menu ul {
+		  float: left;
+		  width: 23%;
+		  margin: 0 2% 15px 0;
+		  padding: 0;
+		  list-style: none;
+		}
+
+		ul#menu ul li {
+		  display: block;
+		}
+
+		ul#menu ul li a {
+		  float: left;
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  line-height: 1.3em;
+		  color: #888;
+		  text-decoration: none;
+		  padding: 6px 0;
+		}
+
+		ul#menu ul li:first-child a {
+		  font-size: 1.2em;
+		  color: #8dc63f;
+		}
+
+		ul#menu ul li a:hover {
+		  color: #fff;
+		  background: none;
+		}
+
+		ul#menu ul li:first-child a:hover {
+		  color: #fff;
+		}
+
+		/* clearfix */
+		nav ul:after {
+		  content: ".";
+		  display: block;
+		  clear: both;
+		  visibility: hidden;
+		  line-height: 0;
+		  height: 0;
+		}
+
+		nav ul {
+		  display: inline-block;
+		} 
+
+		html[xmlns] nav ul {
+		  display: block;
+		}
+		 
+		* html nav ul {
+		  height: 1%;
+		}
+
+		#content {
+		  padding: 30px 0;
+		}
+
+		.login{
+			background-color: #8dc63f;
+		}
+
+		.cate{
+			background-color: #444;
+		}
+
+
+
+
+
+
+		.footer #button{
+            width:35px;
+            height:35px;
+            border: #727172 12px solid;
+            border-radius:35px;
+            margin:0 auto;
+            position:relative;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+        .footer #button:hover{
+            width:35px;
+            height:35px;
+            border: #3A3A3A 12px solid;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+            position:relative;
+        }
+        .footer {
+            bottom:0;
+            left:0;
+            position:fixed;
+            width: 100%;
+            height: 2em;
+            overflow:hidden;
+            margin:0 auto;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+            z-index:999;
+        }
+        .footer:hover {
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+            height: 10em;
+        }
+        .footer #container{
+            margin-top:5px;
+            width:100%;
+            height:100%;
+            position:relative;
+            top:0;
+            left:0;
+            background: #3A3A3A;
+        }
+        .footer #cont{
+            position:relative;
+            top:-45px;
+            right:190px;
+            width:150px;
+            height:auto;
+            margin:0 auto;
+        }
+        .footer_center{
+            width:500px;
+            float:left;
+            text-align:center;
+        }
+        .footer h3{
+            font-family: 'Helvetica';
+            color: white;
+            font-size: 15px;
+            font-weight: 100;
+            margin-top:70px;
+            margin-left:40px;
+        }
+
+        body:before{
+		  content:'';
+		  height:100%;
+		  display:inline-block;
+		  vertical-align:middle;
+		}
+
+		button{
+		  background:#3D3D3D;
+		  color:#fff;
+		  border:none;
+		  position:relative;
+		  height:60px;
+		  font-size:1.6em;
+		  padding:0 2em;
+		  cursor:pointer;
+		  transition:800ms ease all;
+		  outline:none;
+		}
+
+		button:hover{
+		  background:#fff;
+		  color:#3D3D3D;
+		}
+
+		button:before,button:after{
+		  content:'';
+		  position:absolute;
+		  top:0;
+		  right:0;
+		  height:2px;
+		  width:0;
+		  background: #1AAB8A;
+		  transition:400ms ease all;
+		}
+
+		button:after{
+		  right:inherit;
+		  top:inherit;
+		  left:0;
+		  bottom:0;
+		}
+
+		button:hover:before,button:hover:after{
+		  width:100%;
+		  transition:800ms ease all;
+		}
+
+		
+		.buysell{
+            text-align: center;
+            margin-top:600px;
+            position: absolute;
+          	max-width: 1200px;
+            min-width: 1200px;
+            color: white;
+            margin-left: 19%;
+        }
+
+        .buysellimg{
+            position: absolute;
+            margin-right: 10%;
+            max-width: 1200px;
+            min-width: 1200px; 
+            margin-top:800px;
+            margin-left: 19%;
+        }
+
+        .lost{
+            text-align: center;
+            margin-top:1700px;
+            position: absolute;
+            max-width: 1200px;
+            min-width: 1200px;
+            color: white;
+            margin-left: 19%;
+        }
+
+        .lostimg{
+            position: absolute;
+            max-width: 1200px;
+            min-width: 1200px; 
+            margin-top:1900px;
+            margin-left: 19%;
+        }
+
+        .share{
+            text-align: center;
+            margin-top:2800px;
+            position: absolute;
+            max-width: 1200px;
+            min-width: 1200px;
+            color: white;
+            margin-left: 19%;
+        }
+
+        .shareimg{
+            position: absolute;
+            max-width: 1200px;
+            min-width: 1200px; 
+            margin-top:3000px;
+            margin-left: 19%;
+        }
+
+        .sidenav nav ul{
+            margin-top:350px;
+            margin-left: 9%;
+            position: absolute;
+            /*margin-left: 10%;*/
+            max-width: 1200px;
+            min-width: 1200px;
+            position: fixed;
+            list-style:none;    /* 점 없애기*/      
+        }
+
+        .sidenav nav ul li {
+            /*display:inline-block;                   세로나열을 가로나열로 변경 */
+                         /* 각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+            font:bold 50px Dotum;                   /* 폰트 설정 12px의 돋움체 굵은 글씨로 표시 */
+            padding: 10px;
+            text-shadow: 5px 5px 5px black;                          
+            
+        }
+
+
+	</style>
+
+</head>
+<body>
+		<div class="sidenav">
+		<nav>
+            <ul>
+                <li><a onclick="$('#buysell').animatescroll();">Buy&Sell</a></li><br>
+                <li><a onclick="$('#lost').animatescroll();">Lost&Found</a></li><br>
+                <li><a onclick="$('#share').animatescroll();">Sharing</a></li>
+            </ul>
+        </nav>
+        </div>
+
+	<header style="text-align: center;">
+		<img src="./smi/sc.png">
+	</header><!-- /header -->
+	
+
+	
+
+	<div id="wrapper">
+
+	<!-- begin nav -->
+	<nav>
+		<ul id="menu">
+			<li class="cate" style="float: left;"><a href="#">≡</a>
+				<div id="mega">
+					<ul>
+						<li><a href="#">생활용품</a></li>
+						<li><a href="#">해충퇴치용품</a></li>
+						<li><a href="#">구강/면도</a></li>
+						<li><a href="#">세탁/청소</a></li>
+						<li><a href="#">욕실 용품</a></li>
+						<li><a href="#">수납/정리</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">의류</a></li>
+						<li><a href="#">남성패션</a></li>
+						<li><a href="#">여성패션</a></li>
+						<li><a href="#">스포츠패션</a></li>
+						<li><a href="#">신발</a></li>
+						<li><a href="#">가방/잡화</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">문구/오피스</a></li>
+						<li><a href="#">필기구</a></li>
+						<li><a href="#">노트/다이어리</a></li>
+						<li><a href="#">사무용품</a></li>
+						<li><a href="#">사무기기</a></li>
+						<li><a href="#">미술용품</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">식품</a></li>
+						<li><a href="#">과일</a></li>
+						<li><a href="#">채소</a></li>
+						<li><a href="#">생수/음료</a></li>
+						<li><a href="#">과자/간식</a></li>
+						<li><a href="#">건강식품</a></li>
+					</ul>		
+				</div>
+			</li>
+			<li><a href="#">물품구매</a></li>
+			<li><a href="#">분실물</a></li>
+			<li><a href="#">나 눔</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li class="login"><a href="#">로그인</a></li>
+		</ul>
+
+	</nav><!-- /nav -->
+
+
+	<div align="center" style="margin-top: 8%"><img src="./smi/logo.png"></div>
+
+	
+	<!-------------------물품거래 -------------- ---------->
+	<div class="buysell">
+        <h1 id="buysell"><font size="100">Buy & Sell</font></h1><br><hr>
+    </div>
+
+	<div align="center">
+    <div class="buysellimg">
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+    <div class="front">
+        <span class="name">안전하고 신속한 거래!</span>
+    </div>
+
+    <div class="back">
+      
+      <div class="back-logo"></div>
+      
+    </div>
+        </div>
+    </div>
+
+    </div>
+    </div><br>
+
+
+
+
+
+
+    <!-------------------분실물 -------------- ---------->
+	<div class="lost">
+        <h1 id="lost"><font size="100">Lost & Found</font></h1><br><hr>
+    </div>
+
+	<div align="center">
+    <div class="lostimg">
+
+    <div class="flip-container2" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper2">
+    <div class="front2">
+        <span class="name2">분실물 관리가 용이합니다.</span>
+    </div>
+
+    <div class="back2">
+      
+      <div class="back-logo2"></div>
+      
+    </div>
+        </div>
+    </div>
+
+    </div>
+    </div><br>
+
+
+
+
+
+
+
+
+    <!-------------------나눔 -------------- ---------->
+	<div class="share">
+        <h1 id="share"><font size="100">Sharing</font></h1><br><hr>
+    </div>
+
+	<div align="center">
+    <div class="shareimg">
+
+    <div class="flip-container3" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper3">
+    <div class="front3">
+        <span class="name3">쓰지 않는 물건은 나누자!</span>
+    </div>
+
+    <div class="back3">
+      
+      <div class="back-logo3"></div>
+      
+    </div>
+        </div>
+    </div>
+
+    </div>
+    </div><br>
+
+
+
+
+
+
+
+	
+
+	<!--- 
+	<video id="smv" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="./smv/smv.mp4">
+    </video>
+     -- ---->
+
+    <div class="footer">
+    <div id="button"></div>
+    <div id="container">
+        <div id="cont">
+            <div class="footer_center">
+                <h3>
+                COPYRIGHT (C) CODINGRAPPER ALL RIGHTS RESERVED.<br><br>
+                SCHOOL MARKET
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script  src="./js/animatescroll.js"></script>
+
+</body>
+</html>
