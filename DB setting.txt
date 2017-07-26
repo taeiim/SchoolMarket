@@ -1,1 +1,0 @@
-host 'localhost' user 'ricky1811' password 'ljmstory2288!' dbname 'ricky1811'
