@@ -1,0 +1,55 @@
+h2{
+	text-align: center;
+	font-size: 40px;
+}
+
+.mypage_menu{
+	clear: both;
+	width: 810px;
+	margin: 100px auto;
+}
+ul{
+	padding: 0px;
+}
+ul{
+	display: block;
+	list-style-type: disc;
+	list-style-position: inside;
+	list-style: none;
+
+}
+.my_info{
+	align-content: center;
+}
+
+.mypage_menu li{
+	width: 400px;
+	padding: 40px 0;
+	float: left;
+	border: 1px solid rgb(0,0,0);
+	text-align: center;
+}
+
+li{
+	margin: 0px;
+	padding: 0px;
+}
+
+.my_info{
+	width: 400px;
+	margin: 0 auto;
+}
+.my_info li strong.title{
+	width: 65px;
+	text-align: center;
+
+}
+
+.my_info li span:nth-child(1){
+	display: inline-block;
+	width: 70px;
+}
+
+.my_info li{
+	font-size: 20px;
+}
