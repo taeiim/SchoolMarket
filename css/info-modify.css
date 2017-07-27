@@ -1,0 +1,52 @@
+@charset "UTF-8";
+		
+		html {
+			size: 10px;
+			color: rgb(100,100,100);
+		}
+
+		#title {
+			line-height: 0;
+			margin-left: 20rem;
+		}
+
+		#title-top {
+			font-size: 2rem;
+		}
+
+		#title-bottom {
+			font-size: .8rem;
+		}
+
+		#modi-info {
+			margin-left: 29rem;
+		}
+
+		.input {
+			width: 18rem;
+			height: 1.5rem;
+		}
+
+		th,td {
+			padding-bottom: 1rem;
+			padding-right: 1rem;
+		}
+
+		#change {
+			margin-top: 1rem;
+			margin-left: 39rem;
+			width: 4rem;
+			height: 2rem;
+			border: 0;
+			background: #2e7d32;
+			color: rgb(240,240,240);
+			cursor: pointer;
+		}
+
+		#cancel {
+			width: 4rem;
+			height: 2rem;
+			border: 1px solid #BDBDBD;
+			background: white;
+			cursor: pointer;
+		}

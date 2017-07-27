@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/info-modify.css">
+	<script src="js/info-modify.js"></script>
+</head>
+<body>
+	<div id="title">
+		<p id="title-top">정보 수정</p>
+		<p id="title-bottom">정보를 수정하실 수 있습니다.</p>
+	</div>
+	<br>
+	<hr width="1000rem;"><br><br>
+	<table id="modi-info">
+		<tbody>
+			<tr>
+				<th>학교</th>
+				<td><input type="text" name="school" value="ooo학교" class="input" required></td>
+			</tr>
+			<tr>
+				<th>학년</th>
+				<td><input type="number" name="grade" value="1" class="input" required></td>
+			</tr>
+			<tr>
+				<th>반</th>
+				<td><input type="number" name="class" value="1" class="input" required></td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td><input type="tel" name="phoneNum" value="00011112222" class="input" required></td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<input type="submit" name="" value="적용" id="change" onclick="ok();"> <!-- name 뭐라 해야 되지?-->
+		<button id="cancel" onclick="can();">취소</button>
+	</div>
+</body>
+</html>
