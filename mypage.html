@@ -1,62 +1,374 @@
-<<<<<<< HEAD:mypage.html
-
-<link rel="stylesheet" type="text/css" href="mypage-css.css">
-
-=======
->>>>>>> c2b415e6b2fb26410ac63499bdfba2c423da1a81:mypage.html
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="./css/bootstrap.css">
-	<style>
-		a {
-			width: 200px;
-			height: 200px;
-			display: block;
-			float: left;
-			vertical-align: middle;
-			text-align: center;
+	<title></title>
+
+	<style type="text/css">
+		body {
+  			background-image: url('./smi/main2.jpg');
+			background-repeat: no-repeat; 
+			background-attachment: fixed; 
+  			font-size: 70%;
+}
+
+.container {
+  padding: 2em;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 2em 6em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: #2ecc71;
+}
+
+/* BUTTON 1 */
+.btn-1::after {
+  height: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-1:hover:after {
+  height: 100%;
+}
+
+/* BUTTON 2 */
+.btn-2::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn-2:hover:after {
+  width: 100%;
+}
+
+/* BUTTON 3 */
+.btn-3::after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  background: #2ecc71;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* BUTTON 4 */
+.btn-4::before {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-4::after {
+  background: #2ecc71;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-4:hover:after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+
+/* BUTTON 5 */
+.btn-5 {
+  overflow: hidden;
+}
+
+.btn-5::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn-5:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+
+
+
+
+#wrapper {
+		  width: 100%;
+		  min-height: 20%;
+		  margin: 0 auto;
 		}
+
+		nav {
+		  position: relative;
+		  width: 100%;
+		  height: 50%;
+		  margin: 0 auto;
+		  background: #2e7d32;
+		  text-align: center;
+		  border-top:2px solid black; 
+		  border-bottom:2px solid black; 
+		  border-left:2px solid black; 
+		  border-right:2px
+		}
+
+		header, nav { 
+		  display: block;
+		}
+
+		nav ul#menu {
+		  display: block;
+		  margin: 0;
+		  padding: 0;
+		  list-style: 0;
+		  font-size: 20px;
+		} 
+
+		nav ul#menu li {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		nav ul#menu li a {
+		  display: block;
+		  height: 50px;
+		  font-size: 1em;
+		  line-height: 50px;
+		  color: #fff;
+		  text-decoration: none;
+		  padding: 0 15px;
+		}
+
+		nav ul#menu li a:hover, nav ul#menu li:hover > a {
+		  background: #333;
+		}
+
+		nav ul#menu li:hover > #mega {
+		  display: block;
+		}
+
+		#mega {
+		  position: absolute;
+		  top: 100%;
+		  left: 0;
+		  width: 920px;
+		  height: auto;
+		  padding: 20px 30px;
+		  background: #333;
+		  display: none;
+		}
+
+		ul#menu ul {
+		  float: left;
+		  width: 23%;
+		  margin: 0 2% 15px 0;
+		  padding: 0;
+		  list-style: none;
+		}
+
+		ul#menu ul li {
+		  display: block;
+		}
+
+		ul#menu ul li a {
+		  float: left;
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  line-height: 1.3em;
+		  color: #888;
+		  text-decoration: none;
+		  padding: 6px 0;
+		}
+
+		ul#menu ul li:first-child a {
+		  font-size: 1.2em;
+		  color: #8dc63f;
+		}
+
+		ul#menu ul li a:hover {
+		  color: #fff;
+		  background: none;
+		}
+
+		ul#menu ul li:first-child a:hover {
+		  color: #fff;
+		}
+
+		/* clearfix */
+		nav ul:after {
+		  content: ".";
+		  display: block;
+		  clear: both;
+		  visibility: hidden;
+		  line-height: 0;
+		  height: 0;
+		}
+
+		nav ul {
+		  display: inline-block;
+		} 
+
+		html[xmlns] nav ul {
+		  display: block;
+		}
+		 
+		* html nav ul {
+		  height: 1%;
+		}
+
+		.login{
+			background-color: #8dc63f;
+		}
+
+		#info{
+			margin-top: 100px;
+		}
+
 	</style>
 </head>
 <body>
-<<<<<<< HEAD
-<div class="container" align="center">
-	<h2>
-		MyPage
-	</h2>
-	<table class="table table-bordered" style="width: 30%;">
-		<tr>
-			<th>이름</th>
-			<td>박태임</td>
-		</tr>
-		<tr>
-			<th>학교</th>
-			<td>대덕SW 마이스터고</td>
-		</tr>
-		<tr>
-			<th>학년</th>
-			<td>2</td>
-		</tr>
-		<tr>
-			<th>반</th>
-			<td>2</td>
-		</tr>
-	</table>
-		<a href="#">
-			<img src="/Users/parktaeim/Downloads/transaction_details_icon.png" alt="거래내역">
-		</a>
-		<a href="#">
-			<img src="/Users/parktaeim/Downloads/share_icon.png" alt="나눔내역" >
-		</a>
-		<a href="#">
-			<img src="/Users/parktaeim/Downloads/lost_item_icon.png" alt="분실물">
-		</a>
-		<a href="#">
-			<img src="/Users/parktaeim/Downloads/modify_info_icon.png" alt="회원정보수정">
-		</a>
-=======
+
+
+<div id="wrapper">
+
+	<!-- begin nav -->
+	<nav>
+		<ul id="menu">
+			<li class="cate" style="float: left;"><a href="#">≡</a>
+				<div id="mega">
+					<ul>
+						<li><a href="#">생활용품</a></li>
+						<li><a href="#">해충퇴치용품</a></li>
+						<li><a href="#">구강/면도</a></li>
+						<li><a href="#">세탁/청소</a></li>
+						<li><a href="#">욕실 용품</a></li>
+						<li><a href="#">수납/정리</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">의류</a></li>
+						<li><a href="#">남성패션</a></li>
+						<li><a href="#">여성패션</a></li>
+						<li><a href="#">스포츠패션</a></li>
+						<li><a href="#">신발</a></li>
+						<li><a href="#">가방/잡화</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">문구/오피스</a></li>
+						<li><a href="#">필기구</a></li>
+						<li><a href="#">노트/다이어리</a></li>
+						<li><a href="#">사무용품</a></li>
+						<li><a href="#">사무기기</a></li>
+						<li><a href="#">미술용품</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">식품</a></li>
+						<li><a href="#">과일</a></li>
+						<li><a href="#">채소</a></li>
+						<li><a href="#">생수/음료</a></li>
+						<li><a href="#">과자/간식</a></li>
+						<li><a href="#">건강식품</a></li>
+					</ul>		
+				</div>
+			</li>
+			<li><a href="#">물품구매</a></li>
+			<li><a href="#">분실물</a></li>
+			<li><a href="#">나 눔</a></li>
+			<li><a href="#">마이페이지</a></li>
+			<li class="login"><a href="#">로그아웃</a></li>
+		</ul>
+
+	</nav><!-- /nav -->
+
+
+
+
+
+<h1 align="center" style="font-size: 50px">MY Page</h1><hr>
+
+<div id="info" align="center" style="font-size: 30px">
+
+<table border="10" style="color: #fff">
+	<tr>
+		<td>이름</td>
+		<td style="text-align: center;">박태임</td>
+	</tr>
+	<tr>
+		<td>학교</td>
+		<td style="text-align: center;">대덕소프트웨어고등학교</td>
+	</tr>
+	<tr>
+		<td>학년</td>
+		<td style="text-align: center;">2</td>
+	</tr>
+	<tr>
+		<td>학반</td>
+		<td style="text-align: center;">2</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="container" style="margin-top: 100px">
+  <button class="btn-1">거래내역</button>
+  <button class="btn-2">나눔내역</button>
+  <button class="btn-3">분 실 물</button>
+  <button class="btn-4">정보수정</button>
+</div>
+
+</body>
+</html>
+
+
+
+
+<!--
+ <link rel="stylesheet" type="text/css" href="css/mypage-css.css">
 <div id="contents">
 
 	<div>
@@ -77,53 +389,25 @@
 			</div>
 			<ul class="mypage_menu">
 				<li>
-<<<<<<< HEAD:mypage.html
 					<a href="">
-						<img src="transaction_details_icon.png" alt="거래내역" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="share_icon.png" alt="나눔내역" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="lost_item_icon.png" alt="분실물" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="modify_info_icon.png" alt="회원정보수정" style="width:200px; height:200px;">
-=======
-					<a href="#">
 						<img src="/Users/parktaeim/Downloads/transaction_details_icon.png" alt="거래내역" style="width:200px; height:200px;">
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="">
 						<img src="/Users/parktaeim/Downloads/share_icon.png" alt="나눔내역" style="width:200px; height:200px;">
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="">
 						<img src="/Users/parktaeim/Downloads/lost_item_icon.png" alt="분실물" style="width:200px; height:200px;">
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="">
 						<img src="/Users/parktaeim/Downloads/modify_info_icon.png" alt="회원정보수정" style="width:200px; height:200px;">
 					</a>
->>>>>>> c2b415e6b2fb26410ac63499bdfba2c423da1a81:mypage.html
 				</li>
 			</ul>
 		</div>
-	</div>
-<<<<<<< HEAD:mypage.html
-
-=======
->>>>>>> c2b415e6b2fb26410ac63499bdfba2c423da1a81:mypage.html
->>>>>>> b75adf836260da6f6ae0ff25b982c3ee98549699
-</div>
-</body>
-</html>
+	</div> -->
