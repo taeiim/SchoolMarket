@@ -2,51 +2,53 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/mypage-css.css">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<style>
+		a {
+			width: 200px;
+			height: 200px;
+			display: block;
+			float: left;
+			vertical-align: middle;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-<div id="contents">
-
-	<div>
-		<div class="title">
-			<h2>
-				[MyPage]
-			</h2>
-			<div class = "my_info">
-				<ul>
-					<li>
-						<span>이름</span> 
-						<span>박태임</span>
-					</li>
-					<li><span>학교</span><span>대덕SW마이스터고등학교</span></li>
-					<li><span>학년</span><span>2</span></li>
-					<li><span>반 </span><span>2</span></li>
-				</ul>
-			</div>
-			<ul class="mypage_menu">
-				<li>
-					<a href="#">
-						<img src="/Users/parktaeim/Downloads/transaction_details_icon.png" alt="거래내역" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="/Users/parktaeim/Downloads/share_icon.png" alt="나눔내역" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="/Users/parktaeim/Downloads/lost_item_icon.png" alt="분실물" style="width:200px; height:200px;">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="/Users/parktaeim/Downloads/modify_info_icon.png" alt="회원정보수정" style="width:200px; height:200px;">
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+<div class="container" align="center">
+	<h2>
+		MyPage
+	</h2>
+	<table class="table table-bordered" style="width: 30%;">
+		<tr>
+			<th>이름</th>
+			<td>박태임</td>
+		</tr>
+		<tr>
+			<th>학교</th>
+			<td>대덕SW 마이스터고</td>
+		</tr>
+		<tr>
+			<th>학년</th>
+			<td>2</td>
+		</tr>
+		<tr>
+			<th>반</th>
+			<td>2</td>
+		</tr>
+	</table>
+		<a href="#">
+			<img src="/Users/parktaeim/Downloads/transaction_details_icon.png" alt="거래내역">
+		</a>
+		<a href="#">
+			<img src="/Users/parktaeim/Downloads/share_icon.png" alt="나눔내역" >
+		</a>
+		<a href="#">
+			<img src="/Users/parktaeim/Downloads/lost_item_icon.png" alt="분실물">
+		</a>
+		<a href="#">
+			<img src="/Users/parktaeim/Downloads/modify_info_icon.png" alt="회원정보수정">
+		</a>
 </div>
 </body>
 </html>
