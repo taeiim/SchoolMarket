@@ -1,0 +1,104 @@
+@charset "UTF-8";
+		
+		html {
+			size: 10px;
+			color: rgb(100, 100, 100);
+		}
+
+		#sell {
+			width: 39rem;	
+			height: 5rem;
+			margin-top: 1rem;
+			margin-left: 22rem;
+			padding-left: 1rem;
+			font-size: 2rem;
+			line-height: 0;
+		}
+
+		#sta {
+			line-height: 0;
+			font-size: .9rem;
+		}
+
+		table {
+			position: absolute;
+			width: 40rem;
+			padding-top: 2rem;
+			margin-top: 2rem;
+			margin-left: 22rem;
+		}
+
+		.input{
+			width: 80%;
+			height: 1.7rem;
+			resize: none;
+			outline: none;
+		}
+
+		textarea {
+			width: 80%;
+			resize: none;
+			outline: none;
+		}
+
+		td {
+			padding-bottom: 1rem;
+		}
+
+		th {
+			padding-top: .5rem;
+			vertical-align: top;
+		}
+
+		#reg {
+			position: absolute;
+			margin-left: 50.5rem;
+			margin-top: 27rem;
+			margin-bottom: 2rem;
+			background: #2e7d32;
+			border: .3rem solid #2e7d32;
+			border-radius: .3rem;
+			width: 6rem;
+			height: 2.2rem;
+			color: white;
+		}
+
+		select {
+			width: 5rem;
+			height: 1.7rem;
+		}
+
+		#img {
+			margin-left: 33rem;
+			padding: 0;
+		}
+
+		#blah {
+			position: relative;
+			width: 20rem;
+			height: 20rem;
+		}
+
+		#replace {
+			position: absolute;
+			width: 9rem;
+			height: 2.2rem;
+			border: .3rem solid #2e7d32;
+			border-radius: .3rem;
+			background: #2e7d32;
+			color: white;
+		}
+
+		#imgInp {
+			width: 7rem;
+			height: 2.2rem;
+			border: .3rem solid #2e7d32;
+			border-radius: .3rem;
+			background: #2e7d32;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		#subimg {
+			margin-left: 33rem;
+		}

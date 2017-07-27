@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>물품 구매</title>
+    <title>카테고리>필기구</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/deal_style.css">
     <style>
@@ -14,10 +14,10 @@
 <body>
 <div class="container">
     <hr>
-    <h3>물품 구매</h3>
+    <h3>카테고리>필기구</h3>
     <hr>
         <p>
-            <button class="btn btn-default pull-right" onclick = "location.href = './write.php' ">물품 등록</button>
+            <button class="btn btn-default pull-right" index.php>물품 등록</button>
         </p>
     <a href="./product.html"><img src="https://usercontents-c.styleshare.kr/images/18349118/640x640" alt=""  style="width: 250px"/></a>
     <p align="center"  style="padding-top: 12px;background-color: black; color: white; width: 250px; height: 50px;">귀요미 필통

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<style type="text/css">
+		body {
+  			background-image: url('./smi/main2.jpg');
+			background-repeat: no-repeat; 
+			background-attachment: fixed; 
+  			font-size: 70%;
+}
+
+.container {
+  padding: 2em;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 2em 6em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: #2ecc71;
+}
+
+/* BUTTON 1 */
+.btn-1::after {
+  height: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-1:hover:after {
+  height: 100%;
+}
+
+/* BUTTON 2 */
+.btn-2::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn-2:hover:after {
+  width: 100%;
+}
+
+/* BUTTON 3 */
+.btn-3::after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  background: #2ecc71;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* BUTTON 4 */
+.btn-4::before {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-4::after {
+  background: #2ecc71;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.btn-4:hover:after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+
+/* BUTTON 5 */
+.btn-5 {
+  overflow: hidden;
+}
+
+.btn-5::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn-5:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+	</style>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+	<!-- begin nav -->
+	<nav>
+
+<h1 align="center" style="font-size: 50px">MY Page</h1><hr>
+
+<div id="info" align="center" style="font-size: 30px">
+
+<table border="10" style="color: #fff">
+	<tr>
+		<td>이름</td>
+		<td style="text-align: center;">나성식</td>
+	</tr>
+	<tr>
+		<td>학교</td>
+		<td style="text-align: center;">대덕 소프트웨어 고등학교</td>
+	</tr>
+	<tr>
+		<td>학년</td>
+		<td style="text-align: center;">2학년</td>
+	</tr>
+	<tr>
+		<td>학반</td>
+		<td style="text-align: center;">2학년</td>
+	</tr>
+</table>
+
+</div>
+
+<div class="container" style="margin-top: 100px">
+  <button class="btn-1" onclick = "location.href = './deal_log.html'" >거래내역</button>
+  <button class="btn-2" onclick = "location.href = './share_log.html'">나눔내역</button>
+  <button class="btn-3" onclick = "location.href = './lost_item_details.html' ">분 실 물</button>
+  <button class="btn-4" onclick = "location.href = './profile.html' " >정보수정</button>
+	<button class="btn-4" onclick = "location.href = './main2.html' " >홈 으 로</button>
+</div>
+
+</body>
+</html>
+
+
+
+
+<!--
+ <link rel="stylesheet" type="text/css" href="css/mypage-css.css">
+<div id="contents">
+
+	<div>
+		<div class="title">
+			<h2>
+				[MyPage]
+			</h2>
+			<div class = "my_info">
+				<ul>
+					<li>
+						<span>이름</span> 
+						<span>박태임</span>
+					</li>
+					<li><span>학교</span><span>대덕SW마이스터고등학교</span></li>
+					<li><span>학년</span><span>2</span></li>
+					<li><span>반 </span><span>2</span></li>
+				</ul>
+			</div>
+			<ul class="mypage_menu">
+				<li>
+					<a href="">
+						<img src="/Users/parktaeim/Downloads/transaction_details_icon.png" alt="거래내역" style="width:200px; height:200px;">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="/Users/parktaeim/Downloads/share_icon.png" alt="나눔내역" style="width:200px; height:200px;">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="/Users/parktaeim/Downloads/lost_item_icon.png" alt="분실물" style="width:200px; height:200px;">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="/Users/parktaeim/Downloads/modify_info_icon.png" alt="회원정보수정" style="width:200px; height:200px;">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div> -->
